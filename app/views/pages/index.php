@@ -37,7 +37,7 @@ require APPROOT . '/views/inc/header.php';
                 </a>
             </div>
            <?php if(isset($_SESSION['user_id'])) :?>
-            <a class="hidden items-center justify-center rounded-xl bg-red-700 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset  transition-all duration-150 hover:bg-black sm:inline-flex"
+            <a class="hidden items-center justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-normal text-white shadow-sm ring-1 ring-inset  transition-all duration-150 hover:bg-black sm:inline-flex"
                     href="<?php echo URLROOT; ?>/users/Logout">Logout</a>
             <?php  else : ?>
             <div class="flex items-center justify-end gap-3">

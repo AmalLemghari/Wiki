@@ -73,29 +73,29 @@ require APPROOT . '/views/inc/header.php';
             <div class="row">
               <div class="col-md-6 mb-4">
                 <div class="form-outline">
-                  <input type="text" id="form3Example1" class="form-control <?php echo (!empty($data['name_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['username']; ?>" />
-                  <label class="form-label" for="form3Example1">Username</label>
+                  <input type="text" name="username" class="form-control <?php echo (!empty($data['name_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['username']; ?>" />
+                  <label class="form-label" for="username">Username<sup style="color: red;">*</sup></label>
                 </div>
               </div>
             </div>
 
             <!-- Email input -->
             <div class="form-outline mb-4">
-              <input type="email" id="form3Example3" class="form-control <?php echo (!empty($data['email_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['email']; ?>" />
-              <label class="form-label" for="form3Example3">Email address</label>
+              <input type="email" name="email" class="form-control <?php echo (!empty($data['email_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['email']; ?>" />
+              <label class="form-label" for="email">Email address<sup style="color: red;">*</sup></label>
               <span class="invalid-feedback"><?php echo $data['email_err']; ?></span>
             </div>
 
             <!-- Password input -->
             <div class="form-outline mb-4">
-              <input type="password" id="form3Example4" class="form-control <?php echo (!empty($data['password_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['password']; ?>" />
-              <label class="form-label" for="form3Example4">Password</label>
+              <input type="password" name="password" class="form-control <?php echo (!empty($data['password_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['password']; ?>" />
+              <label class="form-label" for="password">Password<sup style="color: red;">*</sup></label>
               <span class="invalid-feedback"><?php echo $data['password_err']; ?></span>
             </div>
             <!-- Confirm Password input -->
             <div class="form-outline mb-4">
-              <input type="password" id="form3Example4" class="form-control <?php echo (!empty($data['confirm_password_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['confirm_password']; ?>" />
-              <label class="form-label" for="form3Example4">Confirm Password</label>
+              <input type="password" name="confirm_password" class="form-control <?php echo (!empty($data['confirm_password_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['confirm_password']; ?>" />
+              <label class="form-label" for="confirm_password">Confirm Password<sup style="color: red;">*</sup></label>
               <span class="invalid-feedback"><?php echo $data['confirm_password_err']; ?></span>
             </div>
 

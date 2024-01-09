@@ -1,10 +1,7 @@
 <?php 
     define('DB_HOST','localhost');
-
     define('DB_USER','root');
-
     define('DB_PASS','');
-
     define('DB_NAME','wiki');
 
 
@@ -16,3 +13,5 @@
     define('URLROOT','http://localhost/wiki');
     // Site name
     define('SITENAME','wiki');
+    // App Version
+     define('APPVERSION', '1.0.0');

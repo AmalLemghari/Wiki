@@ -81,27 +81,19 @@ require APPROOT . '/views/inc/header.php';
 
             <!-- Email input -->
             <div class="form-outline mb-4">
-              <input type="email" id="form3Example3" class="form-control <?php echo (!empty($data['email_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['email']; ?>" />
-              <label class="form-label" for="form3Example3">Email address</label>
+              <input type="email" name="email" class="form-control <?php echo (!empty($data['email_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['email']; ?>" />
+              <label class="form-label" for="email">Email address<sup style="color: red;">*</sup></label>
               <span class="invalid-feedback"><?php echo $data['email_err']; ?></span>
             </div>
 
             <!-- Password input -->
             <div class="form-outline mb-4">
-              <input type="password" id="form3Example4" class="form-control <?php echo (!empty($data['password_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['password']; ?>" />
-              <label class="form-label" for="form3Example4">Password</label>
+              <input type="password" name="password" class="form-control <?php echo (!empty($data['password_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['password']; ?>" />
+              <label class="form-label" for="password">Password<sup style="color: red;">*</sup></label>
               <span class="invalid-feedback"><?php echo $data['password_err']; ?></span>
             </div>
           
-            <script>
-                document.getElementById('form3Example3').addEventListener('input', function () {
-                    document.querySelector('#form3Example3 + .form-label').classList.toggle('active', this.value !== '');
-                });
-
-                document.getElementById('form3Example4').addEventListener('input', function () {
-                    document.querySelector('#form3Example4 + .form-label').classList.toggle('active', this.value !== '');
-                });
-            </script>
+            
 
 
             <!-- Submit button -->

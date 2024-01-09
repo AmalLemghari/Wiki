@@ -69,6 +69,7 @@ class Users extends Controller
 
         //Register User
         if ($this->userModel->register($data)) {
+          flash('register_success', 'You are registered and can log in');
           redirect('users/login');
         } else {
           die('Something went wrong');
@@ -171,7 +172,7 @@ class Users extends Controller
 
   public function createUserSession($user)
   {
-    $_SESSION['user_id'] = $user->userId;
+    $_SESSION['user_id'] = $user->id;
     $_SESSION['user_email'] = $user->email;
     $_SESSION['user_name'] = $user->username;
     $_SESSION['user_role'] = $user->role;

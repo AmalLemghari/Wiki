@@ -2,6 +2,7 @@
  /*
   *Pdo database
   *connect to database
+  * Create prepared statements
   *bind values
   *return rows and results
   */
@@ -32,10 +33,11 @@
         }
     }
 
-    //Orepare statement with query
+    //Prepare statement with query
     public function query($sql){
         $this->stmt = $this->dbh->prepare($sql);
     }
+
     //Bind values
     public function bind($param,$value,$type = null){
         if(is_null($type)){
@@ -53,17 +55,21 @@
                     $type = PDO::PARAM_STR;
             }
         }
+
         $this->stmt->bindValue($param,$value,$type);
     }
+
     // Execute the prepared statment
     public function execute(){
         return $this->stmt->execute();
     }
+
     // Get result st as array of objects
     public function resultSet(){
         $this->execute();
         return $this->stmt->fetchAll(PDO::FETCH_OBJ);
     }
+
     //Get single record as object
     public function single(){
         $this->execute();
@@ -73,5 +79,14 @@
     //Get row count
     public function rowCount(){
         return $this->stmt->rowCount();
+    }
+    public function delete($sql, $params = []){
+      $this->query($sql);
+
+      foreach($params as $param => $value){
+          $this->bind($param, $value);
+      }
+
+      return $this->execute();
     }
   }
